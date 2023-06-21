@@ -1,0 +1,8 @@
+{
+  "name": "StoreBase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "2a1326c6"
+}
