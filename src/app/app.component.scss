@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Aplica la fuente Montserrat a todo el cuerpo del documento */
+body {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+/* Opcional: Aplica la fuente Montserrat a elementos específicos como títulos y encabezados */
+ion-card-title,
+ion-card-header {
+  font-family: 'Montserrat', sans-serif;
+}

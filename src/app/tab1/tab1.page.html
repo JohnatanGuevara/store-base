@@ -1,17 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+<ion-content color="light" [style.margin-top.px]="marginTop">
+  <ion-card class="logo" color="trasnparent">
+    <img alt="Silhouette of mountains" src="./assets/img/LogoIdeas.png" />
+    <ion-card-header>
+      
+    </ion-card-header>
+  
+    
+  </ion-card>
+  <ion-grid class="saldos">
+    <ion-col size="2">
+  <ion-card class="cardsaldos" color="primary">
+   
+  <ion-card-content color="secondary">
+   <p> Saldo Disponible</p>
+  <label class="saldodin" slot="end"> $0,00</label>
+</ion-card-content>
+  
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="success">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card-content>Cupones</ion-card-content>
+
+
+     </ion-card>
+    
+  </ion-card>
+</ion-col>
+</ion-grid>
+  <ion-searchbar color="light" [(ngModel)]="searchTerm" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Productos Destacados</ion-card-title>
+     
+    </ion-card-header>
+  <ion-grid >
+    <ion-row>
+      <ion-col color="primary" size="6" *ngFor="let product of filteredProducts">
+        <ion-card class="card">
+          <img class="card-img" [src]="product.image" alt="Product Image">
+          <ion-card-content>
+            <ion-card-title class="producto-nombre">{{ product.nombre }}</ion-card-title>
+            <p class="producto-descripcion">{{ product.descripcion }}</p>
+            <h3 class="producto-precio">${{ product.precio }}</h3>
+            <ion-button (click)="addToCart(product)" fill="outline">
+              <ion-icon name="cart"></ion-icon>
+              <ion-input class="bt-input" type="number" min="1" [placeholder]="product.isAddedToCart ? 'Agregado' : 'Agregar'"></ion-input>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
 </ion-content>
+</body>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body{
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.producto-nombre {
+    font-size: 0.7em;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.producto-descripcion{
+    font-size: 0.7em;
+}
+.producto-precio{
+    font-size: 0.7em;
+    text-align: right;
+    font-style: bold;
+
+}
+.card{
+    border: 1px solid rgb(187, 184, 184);
+    box-shadow: 1px rgb(177, 175, 175);
+    height: auto;
+    width:auto;
+    
+    
+}
+.card-img{
+    width: 100%;
+    max-height:100%;
+    object-fit:fill;
+}
+.bt-input{
+    font-size: 0.65em;
+}
+ion-content {
+    ion-content {
+        --height: calc(0% - 75%);
+        font-family: 'Montserrat', sans-serif;
+      
+      }
+  }
+  
+  ion-grid {
+    flex: 1;
+  }
+
+  ion-card{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .saldos{
+    margin-top: 0px;
+  }
+
+  .cardsaldos{
+    margin-top: 5px;
+  }
+  body{
+    background-color: aquamarine;
+  }
+  saldodin{
+    text-align: right;
+  }
+
+  .logo{
+    border: 5px solid rgb(255, 254, 254);
+    box-shadow: 1px rgb(177, 175, 175);
+    height: auto;
+    width:auto;
+
+
+  }
