@@ -1,46 +1,55 @@
 <body>
   
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
+    <ion-fab-button [routerLink]="['/carrito']">
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-<ion-content color="light" [style.margin-top.px]="marginTop">
-  <ion-card class="logo" color="trasnparent">
-    <img alt="Silhouette of mountains" src="./assets/img/LogoIdeas.png" />
-    <ion-card-header>
+<ion-content [style.margin-top.px]="marginTop">
+ 
+  <ion-card class="cardsaldos" color="light">
+   
+    <ion-card-content color="" allign-items="right">
+     <p> Saldo Disponible</p>
+    <label class="saldodin" slot="end" text-alling="right"> $0,00</label>
+  </ion-card-content>
+    
+  
+    <ion-card color="success">
+  
+    <ion-card-content>Cupones</ion-card-content>
+  
+  
+       </ion-card>
       
-    </ion-card-header>
+    </ion-card>
   
     
-  </ion-card>
+
   <ion-grid class="saldos">
     <ion-col size="2">
-  <ion-card class="cardsaldos" color="primary">
-   
-  <ion-card-content color="secondary">
-   <p> Saldo Disponible</p>
-  <label class="saldodin" slot="end"> $0,00</label>
-</ion-card-content>
-  
-
-  <ion-card color="success">
-
-  <ion-card-content>Cupones</ion-card-content>
-
-
-     </ion-card>
-    
-  </ion-card>
+ 
 </ion-col>
 </ion-grid>
-  <ion-searchbar color="light" [(ngModel)]="searchTerm" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
+  
 
   <ion-card color="light">
     <ion-card-header>
       <ion-card-title>Productos Destacados</ion-card-title>
+      
      
     </ion-card-header>
+    <ion-segment value="custom">
+      <ion-segment-button value="custom">
+        <ion-label>Destacados</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+     
+    </ion-segment>
+
+    <ion-searchbar color="light" [(ngModel)]="searchTerm" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
   <ion-grid >
     <ion-row>
       <ion-col color="primary" size="6" *ngFor="let product of filteredProducts">
@@ -50,9 +59,9 @@
             <ion-card-title class="producto-nombre">{{ product.nombre }}</ion-card-title>
             <p class="producto-descripcion">{{ product.descripcion }}</p>
             <h3 class="producto-precio">${{ product.precio }}</h3>
-            <ion-button (click)="addToCart(product)" fill="outline">
+            <ion-button placeholder="product.isAddedToCart ? 'Agregado' : 'Agregar'" [disabled]="!addToCart" (click)="addToCart(product)" fill="outline">
               <ion-icon name="cart"></ion-icon>
-              <ion-input class="bt-input" type="number" min="1" [placeholder]="product.isAddedToCart ? 'Agregado' : 'Agregar'"></ion-input>
+     
             </ion-button>
           </ion-card-content>
         </ion-card>
@@ -61,4 +70,5 @@
   </ion-grid>
 </ion-card>
 </ion-content>
+  
 </body>

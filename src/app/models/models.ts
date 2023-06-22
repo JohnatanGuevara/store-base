@@ -10,3 +10,13 @@ export interface Product {
 
     
 }
+
+export interface Pedidos{
+    id: string;
+    descripcion:string;
+    fecha: string;
+    hora: string;
+    contenido: string;
+    monto:string;
+    status: string;
+}

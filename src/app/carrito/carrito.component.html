@@ -1,0 +1,68 @@
+
+  
+
+  <ion-header collapse="fade">
+  <ion-toolbar>Carrito
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+  
+
+<div>
+
+
+  
+<ion-grid>
+  <ion-row size="2">
+    <ion-col size="2">
+<ion-content class="ion-padding">
+ 
+  <div *ngIf="cartItems" class="carrito-lista mostrar">
+   
+    
+    <div class="carrito-contenido">
+      <ion-card *ngIf="cartItems">
+        <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          
+        </ion-list-header>
+        <ion-item *ngFor="let item of cartItems">
+          {{ item.nombre }} {{ item.descripcion }}
+          <ion-note class="subtotal" slot="end">${{ calculateTotal(item.precio, item.cantidad) }} </ion-note>
+          <ion-button (click)="removeItem(item)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="decreaseQuantity(item)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          <p>{{item.cantidad}}</p>
+          <ion-button (click)="increaseQuantity(item)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+
+          
+        </ion-item>
+      </ion-list>
+      </ion-card-content>
+    </ion-card>
+    </div>
+   
+    <div class="carrito-total">
+
+      <ion-label>Total:</ion-label>
+      <ion-label>${{ totalPrice }}</ion-label>
+      <ion-button [routerLink]="['/payment']" class="pagar-button" *ngIf="hayProductosEnCarrito" slot="end">Pagar</ion-button>
+    </div>
+  </div>
+</ion-content>
+</ion-col>
+</ion-row>
+</ion-grid>
+</div>
+
+

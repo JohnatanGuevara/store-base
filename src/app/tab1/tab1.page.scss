@@ -4,6 +4,10 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.imgtoolbar{
+  height: 100;
+  width: 100;
+}
 
 .producto-nombre {
     font-size: 0.7em;
@@ -59,7 +63,7 @@ ion-content {
     margin-top: 5px;
   }
   body{
-    background-color: aquamarine;
+    background-color: rgb(255, 252, 252);
   }
   saldodin{
     text-align: right;
@@ -72,4 +76,22 @@ ion-content {
     width:auto;
 
 
+  }
+
+  ion-segment-button {
+    --indicator-color: #08a391;
+  }
+  
+  /* Material Design styles */
+  ion-segment-button.md {
+    --color: #000;
+    --color-checked: #08a391;
+    --indicator-height: 4px;
+  }
+  
+  /* iOS styles */
+  ion-segment-button.ios {
+    --color: #08a391;
+    --color-checked: #fff;
+    --border-radius: 20px;
   }
