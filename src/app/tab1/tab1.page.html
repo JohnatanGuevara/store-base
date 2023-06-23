@@ -1,3 +1,4 @@
+<div class="divtotal">
 <body>
   
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
@@ -5,11 +6,24 @@
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-<ion-content [style.margin-top.px]="marginTop">
- 
+  
+<ion-content [style.margin-top.px]="marginTop" color="light">
+
   <ion-card class="cardsaldos" color="light">
    
     <ion-card-content color="" allign-items="right">
+     <img src="./assets/img/LogoIdeas.png">
+    
+  </ion-card-content>
+    
+    </ion-card>
+  
+
+  
+ 
+  <ion-card class="cardsaldos" color="tertiary">
+   
+    <ion-card-content color="primary" allign-items="right">
      <p> Saldo Disponible</p>
     <label class="saldodin" slot="end" text-alling="right"> $0,00</label>
   </ion-card-content>
@@ -23,39 +37,31 @@
        </ion-card>
       
     </ion-card>
-  
+
     
-
-  <ion-grid class="saldos">
-    <ion-col size="2">
- 
-</ion-col>
-</ion-grid>
+    <ion-card>
   
+    <ion-searchbar
+    [(ngModel)]="searchTerm" color="light" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
+  </ion-card>
 
-  <ion-card color="light">
+  <ion-card class="containerprod" color="primary">
     <ion-card-header>
-      <ion-card-title>Productos Destacados</ion-card-title>
+      <h3>Productos Destacados</h3>
       
      
     </ion-card-header>
-    <ion-segment value="custom">
-      <ion-segment-button value="custom">
-        <ion-label>Destacados</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="segment">
-        <ion-label>Todos</ion-label>
-      </ion-segment-button>
-     
-    </ion-segment>
 
-    <ion-searchbar color="light" [(ngModel)]="searchTerm" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
-  <ion-grid >
-    <ion-row>
-      <ion-col color="primary" size="6" *ngFor="let product of filteredProducts">
-        <ion-card class="card">
-          <img class="card-img" [src]="product.image" alt="Product Image">
-          <ion-card-content>
+  
+<ion-card>
+  <ion-card-content>
+  <div>  
+    <ion-grid  [fixed]="true" class="horizontal-scroll" >
+    <ion-row  class="scroll-items" *ngFor="let product of filteredProducts">
+        <ion-card color="light" class="cardproductos" >
+          <ion-card-content class="carditem">
+          <img class="img" [src]="product.image" alt="Product Image" style="justify-content: center;">
+          
             <ion-card-title class="producto-nombre">{{ product.nombre }}</ion-card-title>
             <p class="producto-descripcion">{{ product.descripcion }}</p>
             <h3 class="producto-precio">${{ product.precio }}</h3>
@@ -65,10 +71,23 @@
             </ion-button>
           </ion-card-content>
         </ion-card>
-      </ion-col>
     </ion-row>
   </ion-grid>
+</div>
+
+</ion-card-content>
+</ion-card>
+
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title>
+      Aqui va otra cosa
+    </ion-card-title>
+  </ion-card-content>
 </ion-card>
 </ion-content>
   
 </body>
+</div>

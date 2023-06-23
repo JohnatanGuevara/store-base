@@ -20,23 +20,22 @@
   </ion-card>
 
 
-<ion-card color="tertiary">
+<ion-card color="light">
   <ion-card>
     <ion-card-header>
-      <h2>Método de Pago</h2>
+      <h3>Método de Pago</h3>
     </ion-card-header>
     <ion-card-content>
       <ion-select placeholder="Seleccione el método de pago">
-        <ion-select-option value="tarjeta">Tarjeta de Crédito</ion-select-option>
+        <ion-select-option value="pago movil">Pago Móvil</ion-select-option>
         <ion-select-option value="efectivo">Efectivo</ion-select-option>
+        <ion-select-option value="efectivo">Zelle</ion-select-option>
       </ion-select>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      <h2>Documento de Identidad</h2>
-    </ion-card-header>
+  
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Tipo de Documento</ion-label>
@@ -53,9 +52,8 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      <h2>Número de Teléfono</h2>
-    </ion-card-header>
+    
+
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Número de Teléfono</ion-label>
@@ -65,9 +63,7 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      <h2>Ubicación</h2>
-    </ion-card-header>
+    
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Ubicación Actual</ion-label>
@@ -81,7 +77,7 @@
 <ion-card>
   <ion-card-content>
 
-  <ion-button>Confirmar Pago</ion-button>
+  <ion-button slot="end">Confirmar Pago</ion-button>
 </ion-card-content>
 </ion-card>
 </ion-content>

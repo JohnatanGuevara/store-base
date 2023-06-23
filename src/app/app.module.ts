@@ -24,7 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, CarritoComponent, PaymentComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule. forRoot(routes), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule,],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule. forRoot(routes), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule, IonicModule],
   exports:[RouterModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CartService],
   bootstrap: [AppComponent],
