@@ -25,17 +25,35 @@
    
     <ion-card-content color="primary" allign-items="right">
      <p> Saldo Disponible</p>
-    <label class="saldodin" slot="end" text-alling="right"> $0,00</label>
+    <label class="saldodin" slot="end" text-allign="right"> $0,00</label>
   </ion-card-content>
-    
-  
-    <ion-card color="success">
-  
-    <ion-card-content>Cupones</ion-card-content>
-  
-  
-       </ion-card>
+
       
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Productos mas vendidos</ion-card-title>
+        <ion-card-subtitle>Destacados</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list scrollX="true"  *ngFor="let product of filteredProducts">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" [src]="product.image" />
+            </ion-thumbnail>
+            <ion-label>{{ product.nombre }}</ion-label>
+            <ion-button placeholder="product.isAddedToCart ? 'Agregado' : 'Agregar'" [disabled]="!addToCart" (click)="addToCart(product)" fill="outline"><ion-icon name="cart"></ion-icon>
+         
+            </ion-button>
+            
+          </ion-item>
+    
+         
+    
+          
+        </ion-list>
+      </ion-card-content>
     </ion-card>
 
     
@@ -45,20 +63,16 @@
     [(ngModel)]="searchTerm" color="light" (ionChange)="filterProducts()" placeholder="Buscar Producto"></ion-searchbar>
   </ion-card>
 
-  <ion-card class="containerprod" color="primary">
-    <ion-card-header>
-      <h3>Productos Destacados</h3>
-      
-     
-    </ion-card-header>
+  <ion-card class="containerprod" color="light">
 
   
 <ion-card>
   <ion-card-content>
   <div>  
     <ion-grid  [fixed]="true" class="horizontal-scroll" >
-    <ion-row  class="scroll-items" *ngFor="let product of filteredProducts">
+    <ion-row scrollX="true" class="scroll-items" *ngFor="let product of filteredProducts">
         <ion-card color="light" class="cardproductos" >
+          <ion-col>
           <ion-card-content class="carditem">
           <img class="img" [src]="product.image" alt="Product Image" style="justify-content: center;">
           
@@ -70,6 +84,7 @@
      
             </ion-button>
           </ion-card-content>
+        </ion-col>
         </ion-card>
     </ion-row>
   </ion-grid>
@@ -80,13 +95,7 @@
 
 </ion-card>
 
-<ion-card>
-  <ion-card-content>
-    <ion-card-title>
-      Aqui va otra cosa
-    </ion-card-title>
-  </ion-card-content>
-</ion-card>
+
 </ion-content>
   
 </body>

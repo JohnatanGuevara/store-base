@@ -14,6 +14,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { PaymentComponent } from './payment/payment.component';
+import { PaymentService } from './payment.service';
 
 const routes: Routes = [
 { path: 'carrito', component: CarritoComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
   declarations: [AppComponent, CarritoComponent, PaymentComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule. forRoot(routes), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule, IonicModule],
   exports:[RouterModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CartService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CartService, PaymentService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
