@@ -17,6 +17,9 @@ export class PaymentComponent  implements OnInit {
   metodoPago: string = '';
   id: string = '';
   numeroTelefono: string = '';
+  cedulaPagador:string= '';
+  referencia: string= '';
+  nombrePagador:string='';
 
   constructor(private cartService: CartService, private paymentService: PaymentService) {}
 
@@ -71,7 +74,7 @@ export class PaymentComponent  implements OnInit {
       0
     );
 
-    this.paymentService.guardarPago(this.cartItems, this.metodoPago, this.id, this.numeroTelefono, this.totalPrice)
+    this.paymentService.guardarPago(this.cartItems, this.metodoPago, this.id, this.numeroTelefono, this.totalPrice, this.cedulaPagador, this.referencia, this.nombrePagador)
       .then(() => {
      
         

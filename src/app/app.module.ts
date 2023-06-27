@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { CartService } from './services/cart.service';
 import { Router, RouterModule, Routes, ExtraOptions} from '@angular/router'
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -25,8 +26,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, CarritoComponent, PaymentComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule. forRoot(routes), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule, IonicModule],
-  exports:[RouterModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule. forRoot(routes), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule, IonicModule, FormsModule],
+  exports:[RouterModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CartService, PaymentService],
   bootstrap: [AppComponent],
 })

@@ -10,7 +10,7 @@ import { doc, updateDoc} from '@angular/fire/firestore'
 export class PaymentService {
   constructor(private firestore: AngularFirestore, private afAuth: AngularFireAuth) { }
 
-  guardarPago(product: Product[], metodoPago: string, id: string, numeroTelefono: string, totalPrice:number): Promise<DocumentReference<unknown>> {
+  guardarPago(product: Product[], metodoPago: string, id: string, numeroTelefono: string, totalPrice:number, referencia:string, cedulaPagador:string, nombrePagador:string): Promise<DocumentReference<unknown>> {
     const pagoData = {
       productos: product.map(item => ({
         nombre: item.nombre,
@@ -20,7 +20,10 @@ export class PaymentService {
       metodoPago: metodoPago,
       id: id,
       numeroTelefono: numeroTelefono,
-      totalPrice: totalPrice
+      totalPrice: totalPrice,
+      referencia: referencia,
+      cedulaPagador: cedulaPagador,
+      nombrePagador:nombrePagador
       
     };
 

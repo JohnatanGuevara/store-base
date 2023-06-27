@@ -26,13 +26,24 @@
       <h3>Método de Pago</h3>
     </ion-card-header>
     <ion-card-content>
-      <ion-select ngModel='metodoPago' placeholder="Seleccione el método de pago">
+      <ion-select [(ngModel)]= "metodoPago" placeholder="Seleccione el método de pago">
         <ion-select-option value="pago movil">Pago Móvil</ion-select-option>
         <ion-select-option value="efectivo">Efectivo</ion-select-option>
         <ion-select-option value="efectivo">Zelle</ion-select-option>
       </ion-select>
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Nombre del Pagador</ion-label>
+        <ion-input [(ngModel)]= "nombrePagador" type="text"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
 
   <ion-card>
   
@@ -46,7 +57,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Número de Documento</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]= "referencia" type="text"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -57,12 +68,24 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Número de Teléfono</ion-label>
-        <ion-input type="tel"></ion-input>
+        <ion-input [(ngModel)]= "numeroTelefono" type="text"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">No. Referencia del Pago</ion-label>
+        <ion-input [(ngModel)]= "cedulaPagador" type="text"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
+
     
     <ion-card-content>
       <ion-item>
